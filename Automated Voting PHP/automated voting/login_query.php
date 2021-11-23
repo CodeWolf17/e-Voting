@@ -4,15 +4,16 @@
 	if(isset($_POST['login'])){
 		$idno=$_POST['idno'];
 		$password=$_POST['password'];
-
-		$result = $conn->query("SELECT * FROM voters WHERE id_number = '$idno' && password = '$password' && `account` = 'active' && `status` = 'Unvoted'") or die(mysqli_errno());
+		$firstname=$_POST['firstname'];
+		$lastname=$_POST['lastname'];
+		$result = $conn->query("SELECT * FROM voters WHERE lastname = '$lastname' && id_number = '$idno' && password = '$password' && firstname = '$firstname' && `account` = 'active' && `status` = 'Unvoted'") or die(mysqli_errno());
 		$row = $result->fetch_array();
-		$voted = $conn->query("SELECT * FROM `voters` WHERE id_number = '$idno' && password = '$password' && `status` = 'Voted'")->num_rows;
+		$voted = $conn->query("SELECT * FROM `voters` WHERE lastname = '$lastname' && id_number = '$idno' && password = '$password' && firstname = '$firstname' && `status` = 'Voted'")->num_rows;
 		$numberOfRows = $result->num_rows;
     $uip=$_SERVER['REMOTE_ADDR'];
 		$ip=$_SERVER['REMOTE_ADDR'];
 		$geopluginURL='http://www.geoplugin.net/php.gp?ip='.$ip;
-	
+
 
 		if ($numberOfRows > 0){
 			session_start();

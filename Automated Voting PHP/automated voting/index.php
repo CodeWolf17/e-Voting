@@ -12,8 +12,14 @@
                         <center><h3 class="panel-title"> Log In</h3></center>
                     </div>
                     <div class="panel-body">
+
                         <form role="form" method = "post" enctype = "multipart/form-data">
                             <fieldset>
+
+                  <div class="form-group">
+                  <label for = "username" >Course Name.</label>
+                  <input class="form-control" placeholder="Please Enter Voter's Course" name="lastname" type="text" required = "required" autofocus>
+                  </div>
 
                                 <div class="form-group">
 									<label for = "username" >ID No.</label>
@@ -21,9 +27,16 @@
                                 </div>
 
                                 <div class="form-group">
-									<label for = "username" >Password</label>
-										<input class="form-control" placeholder="Password" name="password" type="password" required = "required">
+                  <label for = "username" >First Name</label>
+                    <input class="form-control" placeholder="firstname" name="firstname" type="text" required = "required">
+                               </div>
+
+                                <div class="form-group">
+                  <label for = "username" >Password</label>
+                    <input class="form-control" placeholder="Password" name="password" type="password" required = "required">
                                 </div>
+
+
 <!--
 <style>
 .btn-livestream {

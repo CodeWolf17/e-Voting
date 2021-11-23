@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 01:22 AM
+-- Generation Time: Nov 23, 2021 at 12:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -48,7 +48,10 @@ INSERT INTO `candidate` (`candidate_id`, `position`, `firstname`, `lastname`, `y
 (4, 'Secretary', 'Man', 'Jahulula', '2nd Year', 'Male', 'upload/Untitled-2.png'),
 (5, 'Vice President for Internal Affairs', 'John', 'Jo', '2nd Year', 'Male', 'upload/cloudy.png'),
 (6, 'Vice President for Internal Affairs', 'Emma', 'Piano', '2nd Year', 'Male', 'upload/Untitled-2.png'),
-(7, 'Vice President for Internal Affairs', 'John', 'Jo', '2nd Year', 'Male', 'upload/cloudy.png');
+(7, 'Vice President for Internal Affairs', 'John', 'Jo', '2nd Year', 'Male', 'upload/cloudy.png'),
+(8, 'President', 'isaiah', 'john', '4th Year', 'Male', 'upload/IMG_20210819_135513_174.jpg'),
+(9, 'President', 'isaiah', 'john', '4th Year', 'Male', 'upload/IMG_20210819_135513_174.jpg'),
+(10, 'President', 'isaiah', 'john', '4th Year', 'Male', 'upload/IMG_20210819_135513_174.jpg');
 
 -- --------------------------------------------------------
 
@@ -84,25 +87,27 @@ CREATE TABLE `userlog` (
   `userIp` varbinary(16) NOT NULL,
   `city` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
-  `loginTime` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` varchar(100) DEFAULT NULL
+  `loginTime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userlog`
 --
 
-INSERT INTO `userlog` (`id`, `userId`, `userEmail`, `userIp`, `city`, `country`, `loginTime`, `status`) VALUES
-(78, 44, ' 	4V8Styfv', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:15', NULL),
-(79, 55, '25E9XUJW', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:22', NULL),
-(80, 2, '4si13Geyi', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:37', NULL),
-(81, 2, '4si13Geyhgvhgv', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:57', NULL),
-(82, 2, '4si13Geyhgvhgv', 0x3132372e302e302e31, '', '', '2021-11-15 15:47:02', NULL),
-(83, 2, '4si13Gey', 0x3132372e302e302e31, '', '', '2021-11-15 15:47:04', NULL),
-(84, 2, '4si13Geyghvgv', 0x3132372e302e302e31, '', '', '2021-11-15 15:47:18', NULL),
-(85, 44, ' 	4V8Styfv', 0x3132372e302e302e31, '', '', '2021-11-15 15:49:04', NULL),
-(86, 55, '25E9XUJW', 0x3132372e302e302e31, '', '', '2021-11-15 15:49:16', NULL),
-(87, 11, 'PR0r3CGn', 0x3132372e302e302e31, '', '', '2021-11-15 15:51:12', NULL);
+INSERT INTO `userlog` (`id`, `userId`, `userEmail`, `userIp`, `city`, `country`, `loginTime`) VALUES
+(78, 44, ' 	4V8Styfv', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:15'),
+(79, 55, '25E9XUJW', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:22'),
+(80, 2, '4si13Geyi', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:37'),
+(81, 2, '4si13Geyhgvhgv', 0x3132372e302e302e31, '', '', '2021-11-15 15:45:57'),
+(82, 2, '4si13Geyhgvhgv', 0x3132372e302e302e31, '', '', '2021-11-15 15:47:02'),
+(83, 2, '4si13Gey', 0x3132372e302e302e31, '', '', '2021-11-15 15:47:04'),
+(84, 2, '4si13Geyghvgv', 0x3132372e302e302e31, '', '', '2021-11-15 15:47:18'),
+(85, 44, ' 	4V8Styfv', 0x3132372e302e302e31, '', '', '2021-11-15 15:49:04'),
+(86, 55, '25E9XUJW', 0x3132372e302e302e31, '', '', '2021-11-15 15:49:16'),
+(87, 11, 'PR0r3CGn', 0x3132372e302e302e31, '', '', '2021-11-15 15:51:12'),
+(88, 1234, 'OnBVDi6L', 0x3132372e302e302e31, '', '', '2021-11-19 00:33:07'),
+(89, 1234, 'OnBVDi6L', 0x3132372e302e302e31, '', '', '2021-11-22 12:14:30'),
+(90, 1234, 'OnBVDi6L', 0x3132372e302e302e31, '', '', '2021-11-23 08:47:46');
 
 -- --------------------------------------------------------
 
@@ -126,9 +131,10 @@ CREATE TABLE `voters` (
 --
 
 INSERT INTO `voters` (`voters_id`, `id_number`, `password`, `firstname`, `lastname`, `year_level`, `status`, `account`) VALUES
-(10, 0, 'nNXP3aBt', 'isaya', 'kapama', '3rd Year', 'Unvoted', 'Active'),
-(9, 2, '1zpOeRT2', '2', '2', '2nd Year', 'Voted', 'Active'),
-(8, 11, 'YU0kEvPS', '1', '1', '1st Year', 'Unvoted', 'Active');
+(11, 1234, 'OnBVDi6L', 'voter', 'new', '1st Year', 'Unvoted', 'Active'),
+(10, 0, 'teEwwjEl', 'isaya', 'kapama', '3rd Year', 'Unvoted', 'Active'),
+(9, 2, 'zNlcnYPu', '2', '2', '2nd Year', 'Voted', 'Active'),
+(8, 11, 'GvcxZQqS', '1', '1', '1st Year', 'Unvoted', 'Active');
 
 -- --------------------------------------------------------
 
@@ -201,7 +207,7 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `candidate`
 --
 ALTER TABLE `candidate`
-  MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -213,13 +219,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `voters`
 --
 ALTER TABLE `voters`
-  MODIFY `voters_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `voters_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `votes`
