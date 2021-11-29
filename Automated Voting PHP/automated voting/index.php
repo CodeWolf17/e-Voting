@@ -1,5 +1,6 @@
 <?php include ('head.php');?>
 <body>
+    <!-- comment kpama k-->
     <div class="container">
         <div class="row">
 
