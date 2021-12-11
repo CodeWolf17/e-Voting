@@ -5,10 +5,9 @@
 		$idno=$_POST['idno'];
 		$password=$_POST['password'];
 		$firstname=$_POST['firstname'];
-		$lastname=$_POST['lastname'];
-		$result = $conn->query("SELECT * FROM voters WHERE lastname = '$lastname' && id_number = '$idno' && password = '$password' && firstname = '$firstname' && `account` = 'active' && `status` = 'Unvoted'") or die(mysqli_errno());
+		$result = $conn->query("SELECT * FROM voters WHERE  id_number = '$idno' && password = '$password' && firstname = '$firstname' && `account` = 'active' && `status` = 'Unvoted'") or die(mysqli_errno());
 		$row = $result->fetch_array();
-		$voted = $conn->query("SELECT * FROM `voters` WHERE lastname = '$lastname' && id_number = '$idno' && password = '$password' && firstname = '$firstname' && `status` = 'Voted'")->num_rows;
+		$voted = $conn->query("SELECT * FROM `voters` WHERE  id_number = '$idno' && password = '$password' && firstname = '$firstname' && `status` = 'Voted'")->num_rows;
 		$numberOfRows = $result->num_rows;
     $uip=$_SERVER['REMOTE_ADDR'];
 		$ip=$_SERVER['REMOTE_ADDR'];
@@ -18,7 +17,7 @@
 		if ($numberOfRows > 0){
 			session_start();
 			$_SESSION['voters_id'] = $row['voters_id'];
-
+			$_SESSION['lastname'] = $row['lastname'];
       header("location:vote.php");
 			$log="insert into userlog(userId,userEmail,userIp) values('$idno','$password','$ip')";
 			$conn->query($log);

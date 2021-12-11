@@ -1,9 +1,17 @@
 <?php include ('head.php');?>
-<?php include("sess.php")?>
+<?php include("sess.php");?>
+
+
 <body>
     <div id="wrapper">
         <?php include ('side_bar.php');?>
     </div>
+
+
+
+
+
+
 	<form method = "POST" action = "vote_result.php">
 	<div class="col-lg-6">
 	
@@ -32,7 +40,9 @@
                        
                     </div>
      </div>
-				
+
+
+
 				
 				<div class="col-lg-6">
 	
@@ -246,6 +256,94 @@
 			</div>      
         </div>
      </div>
+<!-- Trials and Errors* -->
+<!-- Trials and Errors* -->
+<!-- Trials and Errors* -->
+<!-- Trials and Errors* -->
+
+<?php
+ 
+if ($_SESSION['lastname']=="IT")
+{
+?>
+<div class="col-lg-6">
+	  <div class="panel panel-primary">
+            <div class="panel-heading">
+			<center>INFORMATION TECH MBUNGE</center>
+            </div>
+            <div class="panel-body" style = "background-color:;">
+				<?php
+					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Muse'") or die(mysqli_errno());
+					while($fetch = $query->fetch_array())
+					{
+				?>
+						<div id = "position">
+							<img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img">
+						<center><button type="button" class="btn btn-primary btn-xs" style = "border-radius:60px;margin-top:4px;"><?php echo $fetch['firstname']." ".$fetch['lastname']?></button></center>
+							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "muse_id" class = "muse"></center>
+						</div>
+	
+				<?php
+					}
+				?>
+			</div>      
+        </div>
+     </div>
+
+<?php
+}
+
+elseif ($_SESSION['lastname']=="CS")
+{
+	?>
+	<div class="col-lg-6">
+		  <div class="panel panel-primary">
+				<div class="panel-heading">
+				<center>COMP SCIENCE MBUNGE</center>
+				</div>
+				<div class="panel-body" style = "background-color:;">
+					<?php
+						$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Muse'") or die(mysqli_errno());
+						while($fetch = $query->fetch_array())
+						{
+					?>
+							<div id = "position">
+								<img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img">
+							<center><button type="button" class="btn btn-primary btn-xs" style = "border-radius:60px;margin-top:4px;"><?php echo $fetch['firstname']." ".$fetch['lastname']?></button></center>
+								<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "muse_id" class = "muse"></center>
+							</div>
+		
+					<?php
+						}
+					?>
+				</div>      
+			</div>
+		 </div>
+	
+	<?php
+	}
+
+else
+{
+	echo "Wisdom & Life Are Free Things, But Freedom Is Expensive, Use It Well When You Still Have The Chance To";
+	session_start();
+	unset($_SESSION['id']);
+	session_destroy();
+	header('Location:../index.php');
+}
+?>
+
+
+
+
+<!-- Trials and Errors* -->
+<!-- Trials and Errors* -->
+<!-- Trials and Errors* -->
+<!-- Trials and Errors* -->
+
+
+
+
 	<div class="col-lg-6" style = "margin-left:350px;">
 	  <div class="panel panel-primary">
             <div class="panel-heading">

@@ -28,6 +28,8 @@
 								<option>Business Manager</option>
 								<option>Sgt. @ Arms</option>
 								<option>Muse</option>
+								<option>Mbunge IT</option>
+								<option>Mbunge CS</option>
 								<option>Escort</option>
 							</select>
 					</div>

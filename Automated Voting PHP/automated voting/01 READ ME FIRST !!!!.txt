@@ -22,4 +22,23 @@ WITHOUT THE DATABASE THE PROJECT WON'T RUN.
 
 
 
-#THANK YOU FOR DOWNLOADING
+#THANK YOU FOR 
+
+prototype/used at vote.php
+<?php
+ 
+if ($_SESSION['lastname']=="IT")
+{
+echo "wE mADE TI HERE AS kapama";
+}
+
+elseif ($_SESSION['lastname']=="CS")
+{
+echo "wE mADE TI HERE As 1";
+}
+
+else
+{
+	echo "Wisdom, Patriotism Is A Free thing, But Freedom Is Costful";
+}
+?>

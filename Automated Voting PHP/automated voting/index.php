@@ -19,11 +19,6 @@
                         <form role="form" method = "post" enctype = "multipart/form-data">
                             <fieldset>
 
-                  <div class="form-group">
-                  <label for = "username" >Course Name.</label>
-                  <input class="form-control" placeholder="Please Enter Voter's Course" name="lastname" type="text" required = "required" autofocus>
-                  </div>
-
                                 <div class="form-group">
 									<label for = "username" >ID No.</label>
 										<input class="form-control" placeholder="Please Enter Voter's ID Number" name="idno" type="text" required = "required" autofocus>
