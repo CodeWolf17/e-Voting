@@ -1,5 +1,8 @@
 <?php include ('head.php');?>
 <body>
+<div class="banner">
+    <img src="./images/vote.jpg">
+    </div>
     <div>
         
     </div>
