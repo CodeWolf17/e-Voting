@@ -1,0 +1,68 @@
+RewriteEngine on
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# Note: It’s also recommended to enable HTTP Strict Transport Security (HSTS)
+# on your HTTPS website to help prevent man-in-the-middle attacks.
+# See https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security
+<IfModule mod_headers.c>
+    # Remove "includeSubDomains" if you don't want to enforce HSTS on all subdomains
+    Header always set Strict-Transport-Security "max-age=31536000;includeSubDomains"
+</IfModule>
+
+
+# Remove Trailing Slash
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Hide php extensions
+
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^.]+)$ $1.php [NC,L]
+
+
+# Turn eTags Off
+RewriteCond %{SCRIPT_FILENAME} -d [OR]
+RewriteCond %{SCRIPT_FILENAME} -f
+RewriteRule "(^|/)\." - [F]
+
+# Deny Access to Backup and Source Fi
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+
+
+# Deny Access to Backup and Source Files
+
+<FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp|txt)|~)$">
+    ## Apache 2.2
+    Order allow,deny
+    Deny from all
+    Satisfy All
+
+    ## Apache 2.4
+    # Require all denied
+</FilesMatch>
+
+
+
+# Disable Directory Browsing
+Options All -Indexes
+
+
+
+# Deny All Access Except Yours
+## Apache 2.2
+Order deny,allow
+Deny from all
+Allow from 127.0.0.1  
+
+
+## Apache 2.4
+# Require all denied
+# Require ip xxx.xxx.xxx.xxx

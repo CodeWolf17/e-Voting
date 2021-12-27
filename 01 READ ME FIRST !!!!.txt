@@ -1,0 +1,67 @@
+
+FOR ADMIN'S LOGIN
+
+  username = admin
+  password = admin
+
+For Voter's Login, Go to Admin Panel and Add or View Voter's List
+There you'll find Voter's ID and Password. Copy and Paste it in Voter's Login to proceed!
+
+DON'T FORGET TO CREATE A DATABASE NAMING "voting" AND IMPORT THE SQL FILE.
+WITHOUT THE DATABASE THE PROJECT WON'T RUN.
+
+>>THE DATABASE FILE IS INSIDE "database" FOLDER!!
+
+***** IF YOU FIND ANY ERRORS OR ANY PROBLEMS RELATED THIS PROGRAM, FEEL FREE TO CONTACT US *****  
+
+
+***** LEAVE A COMMENT IF YOU LOVED OUR WORK *****
+
+
+***** FOR MORE PROJECTS :- https://code-projects.org/ *****
+
+
+
+#THANK YOU FOR 
+.htaccess
+
+https://github.com/phanan/htaccess#disable-directory-browsing
+
+prototype/used at vote.php
+<?php
+ 
+if ($_SESSION['lastname']=="IT")
+{
+echo "wE mADE TI HERE AS kapama";
+}
+
+elseif ($_SESSION['lastname']=="CS")
+{
+echo "wE mADE TI HERE As 1";
+}
+
+else
+{
+	echo "Wisdom, Patriotism Is A Free thing, But Freedom Is Costful";
+}
+?>
+
+
+
+POSITIONS
+
+PRESIDENT (RAIS) & VICE PRESIDENT (MAKAMU WA RAIS)
+PRIME MINISTER (WAZIRI MKUU)
+SECRETARY (KATIBU MKUU KIONGOZI)
+SRC (SPIKA WA BUNGE)
+MINISTRY OF EDUCATIONAL AFFAIRS (WIZARA YA ELIMU)
+MINISTRY OF INTERNAL AFFAIRS (WIZARA YA MAMBO YA NDANI)
+MINISTRY OF SAFETY AND SECURITY (WIZARA YA ULINZI NA USALAMA)
+WIZARA YAMIKOPO & UFADHILI (BARA)
+WIZARA YAMIKOPO & UFADHILI ZANZIBAR (ZANZ)
+MINISTRY OF FINANCE (WIZARA YA FEDHA & MIPANGO)
+WIZARA YA KATIBA, SHERIA & UTAWALA BORA
+MINISTRY OF SPORTS & ENTERTAINMENT (WIZARA YA MICHEZO & BURUDANI)
+WIZARA HABARI,UBUNIFU & MAHUSIANO YA JAMII
+INFORMATION TECH MBUNGE
+COMP SCIENCE MBUNGE
